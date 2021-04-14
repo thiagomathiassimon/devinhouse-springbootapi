@@ -17,19 +17,20 @@ public class ProcessoMock implements Serializable {
 
 		List<ProcessoDTO> listProcessos = new ArrayList<ProcessoDTO>();
 
-		int qtdProcessos = 10;
+		int qtdProcessos = 20;
 
 		for (int i = 0; i < qtdProcessos; i++) {
 
 			ProcessoDTO dto = new ProcessoDTO();
-			dto.setCdAssunto(001);
-			dto.setCdInteressado(001);
-			dto.setDescricao("Processo " + i + "de testes DEV In House ");
-			dto.setDescricaoAssunto("Assunto " + i + " de testes DEV In House ");
+			dto.setCdAssunto(i+1);
+			dto.setCdInteressado(i+1);
+			dto.setDescricao("Processo " + (i + 1 ) + "de testes DEV In House ");
+			dto.setDescricaoAssunto("Assunto " + (i + 1 ) + " de testes DEV In House ");
 			dto.setNmInteressado("Jão Antonio ::: " + i);
-			dto.setNuAnoProcesso(i <= 5 ? "2020" : "2021");
-			dto.setNuProcesso(i);
+			dto.setNuAnoProcesso(i <=10 ? "2020" : "2021");
+			dto.setNuProcesso(i+1);
 			dto.setSgOrgaoProcesso("SOFT");
+			dto.setChaveProcesso(dto.getSgOrgaoProcesso() + " " + dto.getNuProcesso() + "/" + dto.getNuAnoProcesso());
 
 			listProcessos.add(dto);
 		}
